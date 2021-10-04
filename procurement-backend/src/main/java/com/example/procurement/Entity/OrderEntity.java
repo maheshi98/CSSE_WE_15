@@ -19,9 +19,7 @@ public class OrderEntity {
     private String status;
     private Double estimatedCost;
     private String supplierName;
-    private ProjectEntity projectId;
-    @DBRef
-    private List<MaterialsEntity> MaterialList;
+
 
     public OrderEntity(String id, String orderId, Date deadLine, Double totalCost, String status, Double estimatedCost, String supplierName) {
         this.id = id;
@@ -33,17 +31,7 @@ public class OrderEntity {
         this.supplierName = supplierName;
     }
 
-    public List<MaterialsEntity> getMaterialList() {
-        return MaterialList;
-    }
 
-    public void setMaterialList(List<MaterialsEntity> materialList) {
-        MaterialList = materialList;
-    }
-
-    public String getId() {
-        return id;
-    }
 
     public void setId(String id) {
         this.id = id;
@@ -97,11 +85,5 @@ public class OrderEntity {
         this.supplierName = supplierName;
     }
 
-    public ProjectEntity getProjectId() {
-        return projectId;
-    }
 
-    public void setProjectId(ProjectEntity projectId) {
-        this.projectId = projectId;
-    }
 }
