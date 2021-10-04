@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, Button, Row, Col, Image, Form } from 'react-bootstrap';
 import login from '../../assets//login.jpg';
 import './Login.css';
+import UserService from '../../Services/UserService';
 
 export default class LogIn extends Component {
     constructor(props) {
@@ -20,7 +21,9 @@ export default class LogIn extends Component {
     
         };
       }
-      
+      handleChange = this.handleChange.bind(this);
+      shoot = this.shoot.bind(this);
+
       
   componentDidMount() {
 
@@ -32,43 +35,45 @@ export default class LogIn extends Component {
 
 
 }
-// shoot(event) {
+shoot(event) {
  
-//   event.preventDefault();
+  event.preventDefault();
 
-//   LoginService.getUser(this.state.email).then(res => {
-//     this.state.isFound = true;
-//     let user = res.data;
-//     console.log('User => ' + JSON.stringify(user));
+  UserService.login(this.state.email).then(res => {
+    this.state.isFound = true;
+    let user = res.data;
+    console.log('User => ' + JSON.stringify(user));
 
-//     if (user == null) {
-//       this.state.isFound = false;
-//       alert("Invalid Credentials!!");
-//       return;
-//     }
+    if (user == null) {
+      this.state.isFound = false;
+      alert("Invalid Credentials!!");
+      return;
+    }
 
-//     if (this.state.email == user.email && this.state.password == user.password) {
-//       this.state.isFound = true;
-//       window.sessionStorage.setItem("UserId", user.email);
-//       this.state.isValid = true;
-//       this.state.currentUser = user;
-//       this.props.history.push('/admin');
+    if (this.state.email == user.email && this.state.password == user.password) {
+      this.state.isFound = true;
+      window.sessionStorage.setItem("UserId", user.email);
+      window.sessionStorage.setItem("UserRole", user.role);
 
-//     } else {
+      this.state.isValid = true;
+      this.state.currentUser = user;
+      this.props.history.push('/admin');
 
-//       //window.sessionStorage.setItem("UserId", "NF");
-//       this.state.isValid = false;
-//     }
-//     if (this.state.isValid == true) {
-//       if (this.state.isValid == false && this.state.isFound == true) {
-//         this.state.isFound = true;
-//         alert("Password does not match with the given email!");
+    } else {
 
-//       }
-//     }
+      //window.sessionStorage.setItem("UserId", "NF");
+      this.state.isValid = false;
+    }
+    if (this.state.isValid == true) {
+      if (this.state.isValid == false && this.state.isFound == true) {
+        this.state.isFound = true;
+        alert("Password does not match with the given email!");
 
-//   });
-// }
+      }
+    }
+
+  });
+}
     render() {
 
     
