@@ -1,11 +1,35 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button, Row, Col, Image, Form, CardGroup, Table } from 'react-bootstrap';
-
+import OrderService from '../../Services/OrderService';
 import './Orders.css'
 
 
 export default class OrderTable extends Component {
+    constructor(props) {
+        super(props);
+        this.retrieveOrderList = this.retrieveOrderList.bind(this); 
+
+        this.state = {
+            orderDetails: []
+        }
+    }
+
+    componentDidMount() {
+        this.retrieveAccessoryDet();
+    }
+
+    retrieveOrderList = () => {
+        OrderService.getallAccessory().then(response => {
+            this.setState({
+                orderDetails: response.data
+            });
+            console.log(response.data);
+        })
+            .catch(e => {
+                console.log(e);
+            });
+    }
 
     render() {
         return (
@@ -42,7 +66,32 @@ export default class OrderTable extends Component {
                         </div>
                         {/* Table Header End */}
                         {/* Table Data Row Start */}
-
+                        {this.state.orderDetails.map(
+                            order =>
+                                <div class="table-row" key={order.id}>
+                                    <div class="table-cell first-cell">
+                                    <p>{order.orderId}</p>
+                                    </div>
+                                    <div class="table-cell">
+                                        <p>{order.itemName}</p>
+                                    </div>
+                                    <div class="table-cell">
+                                        <p>{order.deadLine}</p>
+                                    </div>
+                                    <div class="table-cell">
+                                        <p>{order.totalCost}</p>
+                                    </div>
+                                    <div class="table-cell">
+                                        <p>{order.status}</p>
+                                    </div>
+                                    <div class="table-cell last-cell">
+                                    <Button variant="dark" type="submit">
+                                                View
+                                            </Button>
+        
+                                    </div>
+                                </div>
+                                )}
                         {/* Table Data Row End */}
                     </div>
                 </Row>
