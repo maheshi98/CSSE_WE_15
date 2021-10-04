@@ -21,7 +21,7 @@ export default class Dashboard extends Component {
                                 <div class="counter-box colored">
                                     <i class="fa fa-calendar"><BsList /></i> <span class="counter">20</span>
                                     <p>Qutations</p>
-                                    <Link to='/submitQuotation'> <Button onClick={this.shoot} variant="primary" type="submit">
+                                    <Link to='/submitQuotation'> <Button onClick={this.shoot} variant="dark" type="submit">
                                                 View
                                             </Button> {''}</Link>
                                 </div>
@@ -30,7 +30,7 @@ export default class Dashboard extends Component {
                                 <div class="counter-box colored">
                                     <i class="fa fa-group"><BsTable /></i> <span class="counter">30</span>
                                     <p>Pending Order List</p>
-                                    <Link to='/orderInfo'> <Button onClick={this.shoot} variant="primary" type="submit">
+                                    <Link to='/orderInfo'> <Button onClick={this.shoot} variant="dark" type="submit">
                                                 View
                                             </Button> {''}</Link>
                                 </div>
@@ -39,7 +39,7 @@ export default class Dashboard extends Component {
                                 <div class="counter-box colored">
                                     <i class="fa fa-github"><BsList/></i> <span class="counter">40</span>
                                     <p>Approved Order List</p>
-                                    <Link to='/approvedOrder'> <Button onClick={this.shoot} variant="primary" type="submit">
+                                    <Link to='/approvedOrder'> <Button onClick={this.shoot} variant="dark" type="submit">
                                                 View
                                             </Button> {''}</Link>
                                 </div>

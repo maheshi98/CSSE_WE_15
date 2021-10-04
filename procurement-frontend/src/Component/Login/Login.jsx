@@ -107,7 +107,7 @@ export default class LogIn extends Component {
                                     </Form.Group>
                                     <br />
                                     <Form.Group>
-                                        <Link to='/admin'> <Button onClick={this.shoot} variant="primary" type="submit">
+                                        <Link to='/dashboard'> <Button onClick={this.shoot} variant="primary" type="submit">
                                             Log In
                                     </Button> {''}</Link>
                                     </Form.Group>
