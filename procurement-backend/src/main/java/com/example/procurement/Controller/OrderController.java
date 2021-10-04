@@ -12,14 +12,14 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping("/")
+@RequestMapping("/order")
 public class OrderController {
 
     @Autowired
     private OrderRepository orderRepository;
 
     @PostMapping("/create")
-    public ResponseEntity<OrderEntity> createPet(@RequestBody OrderEntity pet) {
+    public ResponseEntity<OrderEntity> createOrder(@RequestBody OrderEntity pet) {
         try{
             orderRepository.save(pet);
             return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -30,7 +30,7 @@ public class OrderController {
 
 
     @GetMapping("/getall")
-    public ResponseEntity<List<OrderEntity>> getAllPets(){
+    public ResponseEntity<List<OrderEntity>> getAllOrder(){
         try{
             List<OrderEntity> order = new ArrayList<OrderEntity>();
             orderRepository.findAll().forEach(order::add);
