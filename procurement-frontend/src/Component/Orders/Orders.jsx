@@ -52,7 +52,7 @@ export default class OrderTable extends Component {
                                 <p>Created By</p>
                             </div>
                             <div class="table-cell">
-                                <p>Deadline Period</p>
+                                <p>Deadline</p>
                             </div>
                             <div class="table-cell">
                                 <p>Total Cost(Rs)</p>
