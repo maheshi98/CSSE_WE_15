@@ -8,8 +8,8 @@ class OrderService{
     // getApprovedOrders(){
     //     return axios.get('http://localhost:8080/order/getall/')
     // } 
-    // getAccessoryById(id ){
-    //     return axios.get('http://localhost:8080/petAccessory/getById/' + id);
+    // getOrderById(id ){
+    //     return axios.get('http://localhost:8080/order/getById/' + id);
     // }
 }
 export default new OrderService();

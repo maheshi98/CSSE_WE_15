@@ -16,6 +16,8 @@ export default class Details extends Component {
                             <Card.Title><b>Order Details</b></Card.Title>
                             <p>Order Id:</p>
                             <p>Created By:</p>
+                            <p>Date:</p>
+                            <p>Calculaated Cost:</p>
                         </Card.Body>
                     </Card>
                 </Row>
