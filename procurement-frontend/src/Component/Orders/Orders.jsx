@@ -31,6 +31,11 @@ export default class OrderTable extends Component {
             });
     }
 
+    navigateViewPage(e, orderId) {
+        console.log("Pet ID:", orderId);
+        window.location = `/orderDetails/${orderId}`
+    }
+
     render() {
         return (
             <div className="container">
@@ -85,7 +90,7 @@ export default class OrderTable extends Component {
                                         <p>{order.status}</p>
                                     </div>
                                     <div class="table-cell last-cell">
-                                    <Button variant="dark" type="submit">
+                                    <Button onClick={e => this.navigateViewPage(e, order.id)} variant="dark" type="submit">
                                                 View
                                             </Button>
         
