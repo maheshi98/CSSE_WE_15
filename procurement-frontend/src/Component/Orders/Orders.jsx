@@ -16,11 +16,11 @@ export default class OrderTable extends Component {
     }
 
     componentDidMount() {
-        this.retrieveAccessoryDet();
+        this.retrieveOrderList();
     }
 
     retrieveOrderList = () => {
-        OrderService.getallAccessory().then(response => {
+        OrderService.getAllOrders().then(response => {
             this.setState({
                 orderDetails: response.data
             });
