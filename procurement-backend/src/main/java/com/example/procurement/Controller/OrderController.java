@@ -2,6 +2,7 @@ package com.example.procurement.Controller;
 
 import com.example.procurement.Entity.OrderEntity;
 import com.example.procurement.Repository.OrderRepository;
+import com.example.procurement.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,9 @@ public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private OrderService orderService;
+
     @PostMapping("/create")
     public ResponseEntity<OrderEntity> createOrder(@RequestBody OrderEntity pet) {
         try{
@@ -29,19 +33,11 @@ public class OrderController {
     }
 
 
-    @GetMapping("/getall")
-    public ResponseEntity<List<OrderEntity>> getAllOrder(){
-        try{
-            List<OrderEntity> order = new ArrayList<OrderEntity>();
-            orderRepository.findAll().forEach(order::add);
-            if(order.isEmpty()){
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-            return new ResponseEntity<>(order, HttpStatus.OK);
-        } catch (Exception e){
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    @RequestMapping(value = "/getall", method = RequestMethod.GET)
+    public List<OrderEntity> GetAllOrders(){
+        return orderService.getAllPets();
     }
+
 //    @GetMapping(value = "/")
 //    public List<OrderEntity> getAllOrder(){
 //        return  orderRepository.findAll();
