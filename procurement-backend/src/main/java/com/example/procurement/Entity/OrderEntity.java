@@ -20,18 +20,9 @@ public class OrderEntity {
     private Double estimatedCost;
     private String supplierName;
 
-
-    public OrderEntity(String id, String orderId, Date deadLine, Double totalCost, String status, Double estimatedCost, String supplierName) {
-        this.id = id;
-        this.orderId = orderId;
-        this.deadLine = deadLine;
-        this.totalCost = totalCost;
-        this.status = status;
-        this.estimatedCost = estimatedCost;
-        this.supplierName = supplierName;
+    public String getId() {
+        return id;
     }
-
-
 
     public void setId(String id) {
         this.id = id;
@@ -84,6 +75,4 @@ public class OrderEntity {
     public void setSupplierName(String supplierName) {
         this.supplierName = supplierName;
     }
-
-
 }
