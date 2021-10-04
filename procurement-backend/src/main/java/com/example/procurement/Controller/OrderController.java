@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "*")
@@ -37,6 +38,12 @@ public class OrderController {
     public List<OrderEntity> GetAllOrders(){
         return orderService.getAllPets();
     }
+
+    @GetMapping("getById/{id}")
+    public Optional<OrderEntity> findPetById(@PathVariable String id){
+        return orderRepository.findById(id);
+    }
+
 
 //    @GetMapping(value = "/")
 //    public List<OrderEntity> getAllOrder(){
