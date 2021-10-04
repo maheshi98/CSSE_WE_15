@@ -10,13 +10,13 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserRepository userRepository;
 
-    @PostMapping(value = "seniorManager")
+    @PostMapping(value = "/")
     public UserEntity createUser(@RequestBody UserEntity user){
         return userRepository.save(user);
     }
