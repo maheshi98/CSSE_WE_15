@@ -20,6 +20,7 @@ public class UserController {
     public UserEntity createUser(@RequestBody UserEntity user){
         return userRepository.save(user);
     }
+
     @GetMapping("login/{email}")
     public Optional<UserEntity> findUserDetails(@PathVariable String email){
         return (Optional<UserEntity>) userRepository.findById(email);
