@@ -25,7 +25,7 @@ export default class App extends Component {
                       <Route exact path='/' component={Login} />
                       <Route exact path='/dashboard' component={DashBoard} />
                       <Route exact path='/orderInfo' component={OrderTable} />
-                      <Route exact path='/orderDetails' component={Details} />
+                      <Route exact path='/orderDetails/:id' component={Details} />
                       <Route exact path='/approvedOrder' component={ApprovedOrder} />
                       <Route exact path='/submitQuotation' component={Quotation} />
                   </Switch>
