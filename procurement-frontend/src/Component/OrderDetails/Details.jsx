@@ -11,10 +11,7 @@ export default class Details extends Component {
             orderId: '',
             deadLine: '',
             totalCost: '',
-            price: '',
-            imgUrl: '',
-            ownerName: '',
-            ownerContactNo: '',
+            status: '',
         }
 
         this.onChange = this.onChange.bind(this);
@@ -23,17 +20,15 @@ export default class Details extends Component {
     componentDidMount() {
 
         OrderService.getOrderById(this.state.id).then((res) => {
-            let pet = res.data;
+            let order = res.data;
             this.setState({
-                orderId: pet.orderId,
-                deadLine: pet.deadLine,
-                totalCost: pet.totalCost,
-                price: pet.price,
-                ownerName: pet.ownerName,
-                ownerContactNo: pet.ownerContactNo,
-                imgUrl: pet.imgUrl
+                orderId: order.orderId,
+                deadLine: order.deadLine,
+                totalCost: order.totalCost,
+                status: order.status,
+                
             });
-            console.log(pet);
+            console.log(order);
         })
             .catch(e => {
                 console.log(e);
@@ -58,21 +53,27 @@ export default class Details extends Component {
                     <div class="text-center">
                         <h1 class="head-title">Order Information</h1>
                     </div>
-                    <Card>
+                    <Card style={{ width: '50rem', marginTop:'1rem', marginBottom:'1rem' }} >
                         <Card.Body>
                             <Card.Title><b>Order Details</b></Card.Title>
-                            <p>Order Id:{this.state.orderId}</p>
-                            <p>Created By:</p>
-                            <p>Date:{this.state.deadLine}</p>
-                            <p>Calculated Cost:{this.state.totalCost}</p>
-                            <Button variant="primary">Approve</Button>{' '}
-                            <Button variant="danger">Reject</Button>
+                            <p>Order Id: {this.state.orderId}</p>
+                            <p>Created By: </p>
+                            <p>Date: {this.state.deadLine}</p>
+                            <p>Calculated Cost: {this.state.totalCost}</p>
+                            <p>Status: {this.state.status}</p>
                         </Card.Body>
                         <Card.Body>
                             <Card.Title><b>Requested Materials</b></Card.Title>
+                            <p>Cement: </p>
                         </Card.Body>
                         <Card.Body>
                             <Card.Title><b>Site Information</b></Card.Title>
+                            <p>Site ID: </p>
+                            <p>Mananger Name: </p>
+                            <p>Phone Number: </p>
+                            <p>Location: </p>
+                            <Button variant="primary">Approve</Button>{' '}
+                            <Button variant="danger">Reject</Button>
                         </Card.Body>
                     </Card>
                 </Row>
