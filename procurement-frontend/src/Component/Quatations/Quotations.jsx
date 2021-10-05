@@ -19,7 +19,7 @@ export default class Quotation extends Component {
         this.retrieveQuotationList();
     }
 
-    retrieveOrderList = () => {
+    retrieveQuotationList = () => {
         QuotationService.getAllQuotation().then(response => {
             this.setState({
                 quotationDetails: response.data
@@ -63,7 +63,7 @@ export default class Quotation extends Component {
                         </div>
                         {/* Table Header End */}
                         {/* Table Data Row Start */}
-                        {/* {this.state.quotationDetails.map(
+                        {this.state.quotationDetails.map(
                             quotation =>
                                 <div class="table-row" key={quotation.id}>
                                     <div class="table-cell first-cell">
@@ -73,7 +73,7 @@ export default class Quotation extends Component {
                                         <p>{quotation.itemName}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{quotation.deadLine}</p>
+                                        <p>{quotation.dateFrom} - {quotation.dateTo}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.totalCost}</p>
@@ -83,12 +83,12 @@ export default class Quotation extends Component {
                                     </div>
                                     <div class="table-cell last-cell">
                                     <Button variant="dark" type="submit">
-                                                View
+                                                View Quotation
                                             </Button>
         
                                     </div>
                                 </div>
-                                )} */}
+                                )}
                         {/* Table Data Row End */}
                     </div>
                 </Row>
