@@ -8,7 +8,7 @@ import './Orders.css'
 export default class OrderTable extends Component {
     constructor(props) {
         super(props);
-        this.retrieveOrderList = this.retrieveOrderList.bind(this); 
+        this.retrieveOrderList = this.retrieveOrderList.bind(this);
 
         this.state = {
             orderDetails: []
@@ -75,7 +75,7 @@ export default class OrderTable extends Component {
                             order =>
                                 <div class="table-row" key={order.id}>
                                     <div class="table-cell first-cell">
-                                    <p>{order.orderId}</p>
+                                        <p>{order.orderId}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{order.itemName}</p>
@@ -90,13 +90,13 @@ export default class OrderTable extends Component {
                                         <p>{order.status}</p>
                                     </div>
                                     <div class="table-cell last-cell">
-                                    <Button onClick={e => this.navigateViewPage(e, order.id)} variant="dark" type="submit">
-                                                View
-                                            </Button>
-        
+                                        <Button onClick={e => this.navigateViewPage(e, order.id)} variant="dark" type="submit">
+                                            View
+                                        </Button>
+
                                     </div>
                                 </div>
-                                )}
+                        )}
                         {/* Table Data Row End */}
                     </div>
                 </Row>

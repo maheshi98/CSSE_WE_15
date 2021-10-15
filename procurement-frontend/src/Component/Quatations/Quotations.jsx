@@ -8,7 +8,7 @@ import './Quotations.css';
 export default class Quotation extends Component {
     constructor(props) {
         super(props);
-        this.retrieveQuotationList = this.retrieveQuotationList.bind(this); 
+        this.retrieveQuotationList = this.retrieveQuotationList.bind(this);
 
         this.state = {
             quotationDetails: []
@@ -59,7 +59,13 @@ export default class Quotation extends Component {
                                 <p>Date Period</p>
                             </div>
                             <div class="table-cell">
-                                <p>No of Quotations</p>
+                                <p>Unit Cost</p>
+                            </div>
+                            <div class="table-cell">
+                                <p>Quantity</p>
+                            </div>
+                            <div class="table-cell">
+                                <p>Estimated Amount</p>
                             </div>
                             <div class="table-cell">
                                 <p>Actions</p>
@@ -71,28 +77,35 @@ export default class Quotation extends Component {
                             quotation =>
                                 <div class="table-row" key={quotation.id}>
                                     <div class="table-cell first-cell">
-                                    <p>{quotation.quotationId}</p>
+                                        <p>{quotation.quotationId}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{quotation.itemName}</p>
+                                        <p>{'Saman Perea'}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.dateFrom.split('T')[0]} - {quotation.dateTo.split('T')[0]}</p>
                                     </div>
+                                    <div class="table-cell ">
+                                        <p>{quotation.unitCost}</p>
+                                    </div>
+                                    <div class="table-cell ">
+                                        <p>{quotation.quantity}</p>
+                                    </div>
                                     <div class="table-cell">
-                                        <p>{quotation.totalCost}</p>
+                                        <p>{quotation.estimatedAmount}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.status}</p>
                                     </div>
                                     <div class="table-cell last-cell">
-                                    <Button onClick={e => this.navigateViewPage(e, quotation.id)} variant="dark" type="submit">
+                                        <div style={{ marginLeft: '-7rem' }}>
+                                            <Button onClick={e => this.navigateViewPage(e, quotation.id)} variant="dark" type="submit" size="sm">
                                                 View Quotation
                                             </Button>
-        
+                                        </div>
                                     </div>
                                 </div>
-                                )}
+                        )}
                         {/* Table Data Row End */}
                     </div>
                 </Row>
