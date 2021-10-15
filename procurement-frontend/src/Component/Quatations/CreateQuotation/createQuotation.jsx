@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
-import { Row, Col, Button, Form, Image, Alert , InputGroup} from 'react-bootstrap';
+import { Row, Col, Button, Form, Card, Alert , InputGroup} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import QuotationService from '../../../Services/QuotationService';
+import OrderService from '../../../Services/OrderService';
 
 export default class Createquotation extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-                 
+            id: this.props.match.params.id,  
+            orderId: '',
+            deadLine: '',
+            totalCost: '',
+            status: '',
+            materials:''
         }
 
         this.onChange = this.onChange.bind(this);
@@ -16,7 +22,21 @@ export default class Createquotation extends Component {
     }
 
     componentDidMount() {
-        
+        OrderService.getOrderById(this.state.id).then((res) => {
+            let order = res.data;
+            this.setState({
+                orderId: order.orderId,
+                deadLine: order.deadLine,
+                totalCost: order.totalCost,
+                status: order.status,
+                materials: order.materials
+                
+            });
+            console.log(order);
+        })
+            .catch(e => {
+                console.log(e);
+            });
     }
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
@@ -62,10 +82,22 @@ export default class Createquotation extends Component {
     render() {
         return (
             <div >
-                <div id='createConference' style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
+                <div id='createConference' style= {{paddingLeft : "3cm" , paddingRight : "3cm" , marginTop :'-1.5cm'}}>
                     <div className='section-title text-center'>
                         <h3>Create Quotation</h3>
                     </div>
+                    <Card style={{  marginLeft:'0rem', borderWidth: '0.5rem', marginTop:'-1cm' }}>
+                    <Card.Body >
+                            <Card.Title><b>Order details</b></Card.Title>
+                            <p>Order Id: {this.state.orderId}</p>
+                            <p>Created By: Mr.Harsha Karunarathna</p>
+                            <p>Date: {this.state.deadLine.split('T')[0]}</p>
+                            <p>Calculated Cost: {this.state.totalCost}</p>
+                            <p>Materials: {this.state.materials}</p>
+
+                            {/* <p>Status: {this.state.status}</p> */}
+                        </Card.Body>
+                        </Card>
                     <Row className="landing">
                         <Col >
                             <Form onSubmit={this.onSubmit} style={{ width: "80%", marginLeft: "10%" }}>
