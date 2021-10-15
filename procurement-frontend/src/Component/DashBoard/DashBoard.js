@@ -15,12 +15,12 @@ export default class Dashboard extends Component {
                     <div class="text-center">
                         <h1 class="head-title">ADMIN DASHBOARD</h1>
                     </div>
-                    <div class="container-fluid auto-space auto-space-vertical pt-0">
+                    <div class="container-fluid auto-space auto-space-vertical pt-0" style={{marginLeft:'10rem'}}>
                         <div class="row">
                             <div class="four col-sm-6 col-md-3 my-2">
                                 <div class="counter-box colored">
                                     <i class="fa fa-calendar"><BsList /></i> <span class="counter">20</span>
-                                    <p>Qutations</p>
+                                    <p>Quotations</p>
                                     <Link to='/submitQuotation'> <Button onClick={this.shoot} variant="dark" type="submit">
                                                 View
                                             </Button> {''}</Link>
