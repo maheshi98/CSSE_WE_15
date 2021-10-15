@@ -53,21 +53,21 @@ export default class ViewQuotation extends Component {
                 <div class="text-center">
                         <h1 class="head-title">Quotations</h1>
                     </div>
-                    <div style={{  marginLeft:'-20rem' }}>
-                    <Card style={{ width: '100rem', marginTop:'1rem', marginBottom:'1rem' }} >
-                        <Card.Body style={{  marginLeft:'-30rem' }}>
-                            <Card.Title><b>Order Details</b></Card.Title>
+                    <div style={{  marginLeft:'0rem' }}>
+                    <Card style={{ width: '50rem', marginTop:'1rem', marginBottom:'1rem' }} >
+                        <Card.Body style={{  marginLeft:'0rem' }}>
+                            <Card.Title><b>Quotations</b></Card.Title>
                             <p>Order Id: {this.state.orderId}</p>
                             <p>Created By: </p>
                             <p>Date: {this.state.deadLine.split('T')[0]}</p>
                             <p>Calculated Cost: {this.state.totalCost}</p>
                             <p>Status: {this.state.status}</p>
                         </Card.Body>
-                        <Card.Body style={{  marginLeft:'-30rem' }}>
+                        <Card.Body style={{  marginLeft:'0rem' }}>
                             <Card.Title><b>Requested Materials</b></Card.Title>
                             <p>Cement: </p>
                         </Card.Body>
-                        <Card.Body style={{  marginLeft:'-30rem' }}>
+                        <Card.Body style={{  marginLeft:'0rem' }}>
                             <Card.Title><b>Site Information</b></Card.Title>
                             <p>Site ID: </p>
                             <p>Mananger Name: </p>
