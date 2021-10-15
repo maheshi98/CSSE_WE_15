@@ -98,22 +98,25 @@ export default class Details extends Component {
                     <Card style={{ width: '50rem', marginTop:'1rem', marginBottom:'1rem' }} >
                         <Card.Body>
                             <Card.Title><b>Order Details</b></Card.Title>
+                            <div style={{textAlign:'initial', marginLeft:'15rem'}}>
                             <p>Order Id: {this.state.orderId}</p>
                             <p>Created By: Mr.Harsha Karunarathna</p>
                             <p>Date: {this.state.deadLine.split('T')[0]}</p>
                             <p>Calculated Cost: {this.state.totalCost}</p>
-                            <p>Status: {this.state.status}</p>
+                            <p>Status: {this.state.status}</p></div>
                         </Card.Body>
                         <Card.Body>
                             <Card.Title><b>Requested Materials</b></Card.Title>
-                            <p>Cement: </p>
+                            <div style={{textAlign:'initial', marginLeft:'15rem'}}>
+                            <p>Cement: </p></div>
                         </Card.Body>
                         <Card.Body>
                             <Card.Title><b>Site Information</b></Card.Title>
+                            <div style={{textAlign:'initial', marginLeft:'15rem'}}>
                             <p>Site ID: SID78H43 </p>
                             <p>Mananger Name: Mr.Harsha Karunarathna </p>
                             <p>Phone Number: 0775897465</p>
-                            <p>Location: Colombo 10</p>
+                            <p>Location: Colombo 10</p></div>
                             <Button onClick={e => this.approve(e)} variant="primary">Approve</Button>{' '}
                             <Button onClick={e => this.reject(e)} variant="danger">Reject</Button>
                         </Card.Body>
