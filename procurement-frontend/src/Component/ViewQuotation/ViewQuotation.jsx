@@ -56,23 +56,26 @@ export default class ViewQuotation extends Component {
                     <div style={{  marginLeft:'0rem' }}>
                     <Card style={{ width: '50rem', marginTop:'1rem', marginBottom:'1rem' }} >
                         <Card.Body style={{  marginLeft:'0rem' }}>
-                            <Card.Title><b>Quotations</b></Card.Title>
+                            <Card.Title><b>Order Details</b></Card.Title>
+                            <div style={{textAlign:'initial', marginLeft:'15rem'}}>
                             <p>Order Id: Quo001</p>
                             <p>Created By: Mr.Harsha Karunarathna</p>
                             <p>Date: 2021-01-03</p>
                             <p>Calculated Cost: Rs.5000</p>
-                            <p>Status: Approved</p>
+                            <p>Status: Approved</p></div>
                         </Card.Body>
                         <Card.Body style={{  marginLeft:'0rem' }}>
                             <Card.Title><b>Requested Materials</b></Card.Title>
-                            <p>Cement: </p>
+                            <div style={{textAlign:'initial', marginLeft:'15rem'}}>
+                            <p>Cement: </p></div>
                         </Card.Body>
                         <Card.Body style={{  marginLeft:'0rem' }}>
                             <Card.Title><b>Site Information</b></Card.Title>
+                            <div style={{textAlign:'initial', marginLeft:'15rem'}}>
                             <p>Site ID: SID78H43</p>
                             <p>Mananger Name: Mr.Harsha Karunarathna</p>
                             <p>Phone Number: 0775897465</p>
-                            <p>Location: Colombo 10</p>
+                            <p>Location: Colombo 10</p></div>
                         </Card.Body>
                     </Card>
                     </div>
