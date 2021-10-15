@@ -58,7 +58,7 @@ export default class Details extends Component {
                             <Card.Title><b>Order Details</b></Card.Title>
                             <p>Order Id: {this.state.orderId}</p>
                             <p>Created By: </p>
-                            <p>Date: {this.state.deadLine}</p>
+                            <p>Date: {this.state.deadLine.split('T')[0]}</p>
                             <p>Calculated Cost: {this.state.totalCost}</p>
                             <p>Status: {this.state.status}</p>
                         </Card.Body>
