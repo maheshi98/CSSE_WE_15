@@ -6,30 +6,34 @@ import './ApprovedOrder.css';
 
 
 export default class ApprovedOrder extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.retrieveApproveOrderList = this.retrieveApproveOrderList.bind(this); 
+    constructor(props) {
+        super(props);
+        this.retrieveApproveOrderList = this.retrieveApproveOrderList.bind(this); 
 
-    //     this.state = {
-    //         ApproveOrderDetails: []
-    //     }
-    // }
+        this.state = {
+            ApproveOrderDetails: []
+        }
+    }
 
-    // componentDidMount() {
-    //     this.retrieveApproveOrderList();
-    // }
+    componentDidMount() {
+        this.retrieveApproveOrderList();
+    }
 
-    // retrieveApproveOrderList = () => {
-    //     OrderService.getApprovedOrders().then(response => {
-    //         this.setState({
-    //             orderDetails: response.data
-    //         });
-    //         console.log(response.data);
-    //     })
-    //         .catch(e => {
-    //             console.log(e);
-    //         });
-    // }
+    retrieveApproveOrderList = () => {
+        OrderService.getApprovedOrders().then(response => {
+            this.setState({
+                ApproveOrderDetails: response.data
+            });
+            console.log(response.data);
+        })
+            .catch(e => {
+                console.log(e);
+            });
+    }
+
+    navigateViewPage(e, orderId) {
+        window.location = `/createQuotation/${orderId}`
+    }
 
     render() {
         return (
@@ -58,37 +62,43 @@ export default class ApprovedOrder extends Component {
                                 <p>Site Id</p>
                             </div>
                             <div class="table-cell">
+                                <p>Materials</p>
+                            </div>
+                            <div class="table-cell">
                                 <p>Actions</p>
                             </div>
                         </div>
                         {/* Table Header End */}
                         {/* Table Data Row Start */}
-                        {/* {this.state.ApproveOrderDetails.map(
+                        {this.state.ApproveOrderDetails.map(
                             approveOrder =>
                                 <div class="table-row" key={approveOrder.id}>
                                     <div class="table-cell first-cell">
                                     <p>{approveOrder.orderId}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{approveOrder.itemName}</p>
+                                        <p>{approveOrder.approvedBy}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{approveOrder.deadLine}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{approveOrder.totalCost}</p>
+                                        <p>Rs: {approveOrder.totalCost}</p>
+                                    </div>
+                                    <div class="table-cell">
+                                        <p>{approveOrder.materials}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{approveOrder.status}</p>
                                     </div>
                                     <div class="table-cell last-cell">
-                                    <Button variant="dark" type="submit">
+                                   <Button onClick={e => this.navigateViewPage(e, approveOrder.id)}  Button variant="dark" type="submit">
                                                 View & Create Quotation
-                                            </Button>
+                                            </Button> 
         
                                     </div>
                                 </div>
-                                )} */}
+                                )}
                         {/* Table Data Row End */}
                     </div>
                 </Row>

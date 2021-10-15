@@ -20,6 +20,7 @@ public class OrderEntity {
     private Double estimatedCost;
     private String supplierName;
     private String approvedBy;
+    private String materials;
     private Date approveDate = new Date();
 
     public String getId() {
@@ -92,5 +93,13 @@ public class OrderEntity {
 
     public void setApprovedate(Date approveDate) {
         this.approveDate = approveDate;
+    }
+
+    public String getMaterials() {
+        return materials;
+    }
+
+    public void setMaterials(String materials) {
+        this.materials = materials;
     }
 }
