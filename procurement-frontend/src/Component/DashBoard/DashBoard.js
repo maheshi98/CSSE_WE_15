@@ -20,7 +20,7 @@ export default class Dashboard extends Component {
                             <div class="four col-sm-6 col-md-3 my-2">
                                 <div class="counter-box colored">
                                     <i class="fa fa-calendar"><BsList /></i> <span class="counter">20</span>
-                                    <p>Qutations</p>
+                                    <p>Quotations</p>
                                     <Link to='/submitQuotation'> <Button onClick={this.shoot} variant="dark" type="submit">
                                                 View
                                             </Button> {''}</Link>
