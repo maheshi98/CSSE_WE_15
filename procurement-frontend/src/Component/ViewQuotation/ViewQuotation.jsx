@@ -57,11 +57,11 @@ export default class ViewQuotation extends Component {
                     <Card style={{ width: '50rem', marginTop:'1rem', marginBottom:'1rem' }} >
                         <Card.Body style={{  marginLeft:'0rem' }}>
                             <Card.Title><b>Quotations</b></Card.Title>
-                            <p>Order Id: {this.state.orderId}</p>
+                            <p>Order Id: Quo001</p>
                             <p>Created By: Mr.Harsha Karunarathna</p>
-                            <p>Date: {this.state.deadLine.split('T')[0]}</p>
-                            <p>Calculated Cost: {this.state.totalCost}</p>
-                            <p>Status: {this.state.status}</p>
+                            <p>Date: 2021-01-03</p>
+                            <p>Calculated Cost: Rs.5000</p>
+                            <p>Status: Approved</p>
                         </Card.Body>
                         <Card.Body style={{  marginLeft:'0rem' }}>
                             <Card.Title><b>Requested Materials</b></Card.Title>
