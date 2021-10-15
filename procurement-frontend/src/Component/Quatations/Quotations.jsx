@@ -31,6 +31,10 @@ export default class Quotation extends Component {
             });
     }
 
+    navigateViewPage(e, orderId) {
+        console.log("Pet ID:", orderId);
+        window.location = `/viewQuotation/${orderId}`
+    }
     render() {
         return (
             <div className="container">
@@ -82,7 +86,7 @@ export default class Quotation extends Component {
                                         <p>{quotation.status}</p>
                                     </div>
                                     <div class="table-cell last-cell">
-                                    <Button variant="dark" type="submit">
+                                    <Button onClick={e => this.navigateViewPage(e, quotation.id)} variant="dark" type="submit">
                                                 View Quotation
                                             </Button>
         
