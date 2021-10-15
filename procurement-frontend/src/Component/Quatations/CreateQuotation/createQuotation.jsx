@@ -86,7 +86,7 @@ export default class Createquotation extends Component {
                                         type="text"
                                         id="confTopic"
                                         name="estimatedAmount"
-                                        placeholder="FAmount"
+                                        placeholder="Amount"
                                         value={this.state.estimatedAmount}
                                         onChange={this.onChange} />
                                         
