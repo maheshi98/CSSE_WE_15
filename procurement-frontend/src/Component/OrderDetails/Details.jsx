@@ -43,6 +43,45 @@ export default class Details extends Component {
 
     handleEvent() { }
 
+    approve(e) {
+         
+        e.preventDefault();
+        let order = {
+            orderId: this.state.orderId,
+            deadLine: this.state.deadLine,
+            totalCost: this.state.totalCost,
+            status: "APPROVED",
+        };
+        console.log("DETAILS ADDED SUCCESSFUL ", order);
+        OrderService.changeStatus( this.state.id ,order   ).then(res =>{
+            this.setState({"updateShow" : true});
+            setTimeout(() => this.setState({ "updateShow": false }), 3000)
+            let pet;
+            this.setState({ pet : res.data });
+            alert("Successfuly UPDATED!")
+        })
+
+    }
+
+    reject(e) {
+         
+        e.preventDefault();
+        let order = {
+            orderId: this.state.orderId,
+            deadLine: this.state.deadLine,
+            totalCost: this.state.totalCost,
+            status: "REJECTED",
+        };
+        console.log("DETAILS ADDED SUCCESSFUL ", order);
+        OrderService.changeStatus( this.state.id ,order ).then(res =>{
+            this.setState({"updateShow" : true});
+            setTimeout(() => this.setState({ "updateShow": false }), 3000)
+            let pet;
+            this.setState({ pet : res.data });
+            alert("Successfuly REJECTED!")
+        })
+
+    }
     // Class Properties (Stage 3 Proposal)
     handler = () => { this.setState() }
 
@@ -72,8 +111,8 @@ export default class Details extends Component {
                             <p>Mananger Name: </p>
                             <p>Phone Number: </p>
                             <p>Location: </p>
-                            <Button variant="primary">Approve</Button>{' '}
-                            <Button variant="danger">Reject</Button>
+                            <Button onClick={e => this.approve(e)} variant="primary">Approve</Button>{' '}
+                            <Button onClick={e => this.reject(e)} variant="danger">Reject</Button>
                         </Card.Body>
                     </Card>
                 </Row>

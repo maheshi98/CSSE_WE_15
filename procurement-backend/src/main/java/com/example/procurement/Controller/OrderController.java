@@ -44,7 +44,12 @@ public class OrderController {
         return orderRepository.findById(id);
     }
 
-
+    @PutMapping("update/{id}")
+    public ResponseEntity<OrderEntity> updatePet(@RequestBody OrderEntity order, @PathVariable String id){
+        order.setId(id);
+        orderRepository.save(order);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 //    @GetMapping(value = "/")
 //    public List<OrderEntity> getAllOrder(){
 //        return  orderRepository.findAll();
