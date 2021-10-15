@@ -50,6 +50,15 @@ public class OrderController {
         orderRepository.save(order);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @GetMapping("/approvedOrders")
+    public ResponseEntity<List<OrderEntity>> getApprovedOrders() {
+        try {
+            return ResponseEntity.ok(orderService.getConferenceByStatus("APPROVED"));
+        } catch(Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 //    @GetMapping(value = "/")
 //    public List<OrderEntity> getAllOrder(){
 //        return  orderRepository.findAll();
