@@ -57,7 +57,7 @@ shoot(event) {
 
       this.state.isValid = true;
       this.state.currentUser = user;
-      this.props.history.push('/admin');
+      this.props.history.push('/dashboard');
 
     } else {
 
