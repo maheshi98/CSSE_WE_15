@@ -40,7 +40,7 @@ export default class Createquotation extends Component {
         };
         console.log("DETAILS ADDED SUCCESSFUL ", Quotation);
         QuotationService.createQuotation(Quotation).then(res =>{
-            this.props.history.push('/')
+            this.props.history.push('/submitQuotation')
             if(res.data != null){
                 this.setState({"show":true});
                 setTimeout(() => this.setState({"show" :false}) , 3000)
