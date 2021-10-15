@@ -11,5 +11,9 @@ class OrderService{
     getOrderById(id ){
         return axios.get('http://localhost:8080/order/getById/' + id);
     }
+
+    changeStatus(id, order){
+        return axios.put('http://localhost:8080/order/update/' +id, order)
+    }
 }
 export default new OrderService();
