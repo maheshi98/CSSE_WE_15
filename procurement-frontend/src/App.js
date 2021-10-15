@@ -10,6 +10,7 @@ import DashBoard from './Component/DashBoard/DashBoard';
 import Details from './Component/OrderDetails/Details';
 import ApprovedOrder from './Component/ApprovedOrders/ApprovedOrder';
 import Quotation from './Component/Quatations/Quotations';
+import ViewQuotation from './Component/ViewQuotation/ViewQuotation';
 
 export default class App extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export default class App extends Component {
                       <Route exact path='/orderDetails/:id' component={Details} />
                       <Route exact path='/approvedOrder' component={ApprovedOrder} />
                       <Route exact path='/submitQuotation' component={Quotation} />
+                      <Route exact path='/viewQuotation/:id' component={ViewQuotation} />
                   </Switch>
               </BrowserRouter>
       <Footer/>
