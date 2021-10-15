@@ -40,7 +40,7 @@ export default class ApprovedOrder extends Component {
             <div className="container">
                 <Row>
                     <div class="text-center">
-                        <h1 class="head-title">Order Information</h1>
+                        <h1 class="head-title">Approved Order Information</h1>
                     </div>
                     <Row style={{ marginTop: "3%" }}>
                         <Col>
