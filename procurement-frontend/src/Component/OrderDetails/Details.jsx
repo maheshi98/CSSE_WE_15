@@ -11,6 +11,7 @@ export default class Details extends Component {
             orderId: '',
             deadLine: '',
             totalCost: '',
+            approvedBy:'',
             status: '',
         }
 
@@ -50,6 +51,7 @@ export default class Details extends Component {
             orderId: this.state.orderId,
             deadLine: this.state.deadLine,
             totalCost: this.state.totalCost,
+            approvedBy: window.sessionStorage.getItem("UserId"),
             status: "APPROVED",
         };
         console.log("DETAILS ADDED SUCCESSFUL ", order);
@@ -70,6 +72,7 @@ export default class Details extends Component {
             orderId: this.state.orderId,
             deadLine: this.state.deadLine,
             totalCost: this.state.totalCost,
+            approvedBy:  window.sessionStorage.getItem("UserId"),
             status: "REJECTED",
         };
         console.log("DETAILS ADDED SUCCESSFUL ", order);

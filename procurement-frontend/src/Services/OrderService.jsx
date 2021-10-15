@@ -15,5 +15,10 @@ class OrderService{
     changeStatus(id, order){
         return axios.put('http://localhost:8080/order/update/' +id, order)
     }
+
+    getApprovedOrders(){
+        return axios.get('http://localhost:8080/order/approvedOrders');
+
+    }
 }
 export default new OrderService();

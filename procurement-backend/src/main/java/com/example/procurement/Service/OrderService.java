@@ -18,4 +18,8 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public List<OrderEntity> getConferenceByStatus(String status){
+        return orderRepository.findByStatus(status);
+    }
+
 }

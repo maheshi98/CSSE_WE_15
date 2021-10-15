@@ -11,6 +11,7 @@ import Details from './Component/OrderDetails/Details';
 import ApprovedOrder from './Component/ApprovedOrders/ApprovedOrder';
 import Quotation from './Component/Quatations/Quotations';
 import ViewQuotation from './Component/ViewQuotation/ViewQuotation';
+import Createquotation from './Component/Quatations/CreateQuotation/createQuotation';
 
 export default class App extends Component {
   constructor(props) {
@@ -30,6 +31,8 @@ export default class App extends Component {
                       <Route exact path='/approvedOrder' component={ApprovedOrder} />
                       <Route exact path='/submitQuotation' component={Quotation} />
                       <Route exact path='/viewQuotation/:id' component={ViewQuotation} />
+                      <Route exact path='/createQuotation/:id' component={Createquotation} />
+
                   </Switch>
               </BrowserRouter>
       <Footer/>

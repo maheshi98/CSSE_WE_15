@@ -8,5 +8,10 @@ class QuotationService{
     getQuotationById(id ){
         return axios.get('http://localhost:8080/quotation/getById/' + id);
     }
+
+    createQuotation(quotation){
+        return axios.post('http://localhost:8080/quotation/create', quotation);
+
+    }
 }
 export default new QuotationService();
