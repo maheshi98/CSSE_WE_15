@@ -73,7 +73,7 @@ export default class Quotation extends Component {
                                         <p>{quotation.itemName}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{quotation.dateFrom} - {quotation.dateTo}</p>
+                                        <p>{quotation.dateFrom.split('T')[0]} - {quotation.dateTo.split('T')[0]}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.totalCost}</p>
