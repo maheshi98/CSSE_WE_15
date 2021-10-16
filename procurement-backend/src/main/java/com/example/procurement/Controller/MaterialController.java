@@ -18,8 +18,12 @@ public class MaterialController {
     @Autowired
     private MaterialsRepository materialsRepository;
 
+    /**
+     * @description Create new Material
+     * @memberof MaterialController
+     */
     @PostMapping("/create")
-    public ResponseEntity<MaterialsEntity> createPet(@RequestBody MaterialsEntity materialsEntity) {
+    public ResponseEntity<MaterialsEntity> createMaterials(@RequestBody MaterialsEntity materialsEntity) {
         try{
             materialsRepository.save(materialsEntity);
             return ResponseEntity.status(HttpStatus.CREATED).build();

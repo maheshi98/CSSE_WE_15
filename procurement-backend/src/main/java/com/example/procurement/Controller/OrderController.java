@@ -23,38 +23,56 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    /**
+     * @description Create new Order
+     * @memberof OrderController
+     */
     @PostMapping("/create")
-    public ResponseEntity<OrderEntity> createOrder(@RequestBody OrderEntity pet) {
+    public ResponseEntity<OrderEntity> createOrder(@RequestBody OrderEntity order) {
         try{
-            orderRepository.save(pet);
+            orderRepository.save(order);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         }catch(Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-
+    /**
+     * @description This method retrieve all Orders
+     * @memberof OrderController
+     */
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
     public List<OrderEntity> GetAllOrders(){
-        return orderService.getAllPets();
+        return orderService.getAllOrders();
     }
 
+    /**
+     * @description This method retrieve Order details by OrderId
+     */
     @GetMapping("getById/{id}")
-    public Optional<OrderEntity> findPetById(@PathVariable String id){
+    public Optional<OrderEntity> findOrderById(@PathVariable String id){
         return orderRepository.findById(id);
     }
 
+    /**
+     * @description This method Update the status of Order
+     * @memberof OrderController
+     */
     @PutMapping("update/{id}")
-    public ResponseEntity<OrderEntity> updatePet(@RequestBody OrderEntity order, @PathVariable String id){
+    public ResponseEntity<OrderEntity> updateOrder(@RequestBody OrderEntity order, @PathVariable String id){
         order.setId(id);
         orderRepository.save(order);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    /**
+     * @description This method retrieve all Approved Orders
+     * @memberof OrderController
+     */
     @GetMapping("/approvedOrders")
     public ResponseEntity<List<OrderEntity>> getApprovedOrders() {
         try {
-            return ResponseEntity.ok(orderService.getConferenceByStatus("APPROVED"));
+            return ResponseEntity.ok(orderService.getOrderByStatus("APPROVED"));
         } catch(Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }

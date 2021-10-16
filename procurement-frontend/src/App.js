@@ -14,30 +14,30 @@ import ViewQuotation from './Component/ViewQuotation/ViewQuotation';
 import Createquotation from './Component/Quatations/CreateQuotation/createQuotation';
 
 export default class App extends Component {
-  constructor(props) {
-      super(props)
-      this.state = {}
-  }
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
 
-  render() {
-      return (
-          <div className= "body" style={{backgroundColor : '#ddddff'}}>
-              <BrowserRouter>
-                  <Switch>
-                      <Route exact path='/' component={Login} />
-                      <Route exact path='/dashboard' component={DashBoard} />
-                      <Route exact path='/orderInfo' component={OrderTable} />
-                      <Route exact path='/orderDetails/:id' component={Details} />
-                      <Route exact path='/approvedOrder' component={ApprovedOrder} />
-                      <Route exact path='/submitQuotation' component={Quotation} />
-                      <Route exact path='/viewQuotation/:id' component={ViewQuotation} />
-                      <Route exact path='/createQuotation/:id' component={Createquotation} />
+    render() {
+        return (
+            <div className="body" style={{ backgroundColor: '#ddddff' }}>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path='/' component={Login} />
+                        <Route exact path='/dashboard' component={DashBoard} />
+                        <Route exact path='/orderInfo' component={OrderTable} />
+                        <Route exact path='/orderDetails/:id' component={Details} />
+                        <Route exact path='/approvedOrder' component={ApprovedOrder} />
+                        <Route exact path='/submitQuotation' component={Quotation} />
+                        <Route exact path='/viewQuotation/:id' component={ViewQuotation} />
+                        <Route exact path='/createQuotation/:id' component={Createquotation} />
 
-                  </Switch>
-              </BrowserRouter>
-      <Footer/>
-    </div>
-  );
-}
+                    </Switch>
+                </BrowserRouter>
+                <Footer />
+            </div>
+        );
+    }
 
 }
