@@ -81,7 +81,7 @@ export default class ApprovedOrder extends Component {
                                         <p>{approveOrder.approvedBy}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{approveOrder.deadLine.split('T')[0]}</p>
+                                        <p>{approveOrder.deadLine}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>Rs: {approveOrder.totalCost}</p>
