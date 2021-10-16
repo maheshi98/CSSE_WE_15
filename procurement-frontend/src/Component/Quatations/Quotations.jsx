@@ -81,19 +81,19 @@ export default class Quotation extends Component {
                                         <p>{quotation.quotationId}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{quotation.supplierName}</p>
+                                        <p>H R Perera{quotation.supplierName}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.dateFrom} - {quotation.dateTo}</p>
                                     </div>
                                     <div class="table-cell ">
-                                        <p>{quotation.unitCost}</p>
+                                        <p>Rs. {quotation.unitCost}</p>
                                     </div>
                                     <div class="table-cell ">
                                         <p>{quotation.quantity}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{quotation.estimatedAmount}</p>
+                                        <p>Rs. {quotation.estimatedAmount}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.status}</p>

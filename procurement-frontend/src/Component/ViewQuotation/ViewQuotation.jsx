@@ -195,9 +195,9 @@ export default class ViewQuotation extends Component {
                       style={{ marginLeft: "0rem", borderWidth: "0.5rem" }}
                     >
                       <div style={{ textAlign: "initial", marginLeft: "2rem" }}>
-                        <p>Estimated Amount(Rs): </p>
-                        <p>Unit Cost(Rs): </p>
-                        <p>Quantity: </p>
+                        <p>Estimated Amount(Rs): 500.00 </p>
+                        <p>Unit Cost(Rs):200 </p>
+                        <p>Quantity:5 </p>
                       </div>
                       <Button
                         onClick={(e) => this.approve(e)}
