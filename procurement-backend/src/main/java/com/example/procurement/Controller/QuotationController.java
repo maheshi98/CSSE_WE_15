@@ -32,7 +32,9 @@ public class QuotationController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+/**
+ * @
+ * */
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
     public List<QuotationEntity> GetAllQuotation(){
         return quotationService.getAllQuotation();

@@ -117,8 +117,8 @@ export default class Details extends Component {
                             <p>Mananger Name: Mr.Harsha Karunarathna </p>
                             <p>Phone Number: 0775897465</p>
                             <p>Location: Colombo 10</p></div>
-                            <Button onClick={e => this.approve(e)} variant="primary">Approve</Button>{' '}
-                            <Button onClick={e => this.reject(e)} variant="danger">Reject</Button>
+                            <Button type= "submit" onClick={e => this.approve(e)} variant="primary">Approve</Button>{' '}
+                            <Button type= "submit" onClick={e => this.reject(e)} variant="danger">Reject</Button>
                         </Card.Body>
                     </Card>
                 </Row>

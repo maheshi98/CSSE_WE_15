@@ -97,6 +97,7 @@ shoot(event) {
                                         <Form.Control 
                                         type="email" 
                                         name = "email"
+                                        id="email"
                                         placeholder="Enter email"
                                         value={this.state.email} 
                                         onChange={this.handleChange} />
@@ -106,6 +107,7 @@ shoot(event) {
                                         <Form.Control 
                                         type="password" 
                                         name = "password"
+                                        id="password"
                                         placeholder="Password"
                                         value={this.state.password}
                                          onChange={this.handleChange} />

@@ -54,7 +54,7 @@ public class OrderController {
     @GetMapping("/approvedOrders")
     public ResponseEntity<List<OrderEntity>> getApprovedOrders() {
         try {
-            return ResponseEntity.ok(orderService.getConferenceByStatus("APPROVED"));
+            return ResponseEntity.ok(orderService.getOrderByStatus("APPROVED"));
         } catch(Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }

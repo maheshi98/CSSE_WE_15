@@ -16,6 +16,9 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    public UserController(UserRepository userRepository) {
+    }
+
     @PostMapping(value = "/")
     public UserEntity createUser(@RequestBody UserEntity user){
         return userRepository.save(user);
