@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Row, Col, Image, Form, CardGroup, Table } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import OrderService from '../../Services/OrderService';
 import './Orders.css'
 
@@ -19,6 +19,7 @@ export default class OrderTable extends Component {
         this.retrieveOrderList();
     }
 
+    //retrieve Order List
     retrieveOrderList = () => {
         OrderService.getAllOrders().then(response => {
             this.setState({

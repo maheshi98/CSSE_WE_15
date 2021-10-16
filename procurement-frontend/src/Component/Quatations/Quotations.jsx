@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Row, Col, Image, Form, CardGroup, Table } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import QuotationService from '../../Services/QuotationService';
 import './Quotations.css';
 
@@ -19,6 +19,7 @@ export default class Quotation extends Component {
         this.retrieveQuotationList();
     }
 
+    //retrieve Quotation List
     retrieveQuotationList = () => {
         QuotationService.getAllQuotation().then(response => {
             this.setState({

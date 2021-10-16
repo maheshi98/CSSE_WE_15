@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Row, Col, Image, Form, CardGroup, Table } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import OrderService from '../../Services/OrderService';
 import './ApprovedOrder.css';
 
@@ -19,6 +19,7 @@ export default class ApprovedOrder extends Component {
         this.retrieveApproveOrderList();
     }
 
+    //retrieve Approve Order List
     retrieveApproveOrderList = () => {
         OrderService.getApprovedOrders().then(response => {
             this.setState({
