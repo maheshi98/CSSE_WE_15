@@ -15,9 +15,11 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<OrderEntity> getAllPets(){
+
+    public List<OrderEntity> getAllOrders(){
         return orderRepository.findAll();
     }
+
 
     public String getOrderName(){
         return "Orde100";

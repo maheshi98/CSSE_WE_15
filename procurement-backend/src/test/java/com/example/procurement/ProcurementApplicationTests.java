@@ -82,7 +82,7 @@ class ProcurementApplicationTests {
 
 	@Test
 	public void testGetAllOrders() {
-		List<OrderEntity> order = orderService.getAllPets();
+		List<OrderEntity> order = orderService.getAllOrders();
 		assertThat(order.size(), is(greaterThanOrEqualTo(1)));
 	}
 

@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-class QuotationService{
-   
-    getAllQuotation(){
+class QuotationService {
+
+    getAllQuotation() {
         return axios.get('http://localhost:8080/quotation/getall')
-    } 
-    getQuotationById(id ){
+    }
+    getQuotationById(id) {
         return axios.get('http://localhost:8080/quotation/getById/' + id);
     }
 
-    createQuotation(quotation){
+    createQuotation(quotation) {
         return axios.post('http://localhost:8080/quotation/create', quotation);
 
     }

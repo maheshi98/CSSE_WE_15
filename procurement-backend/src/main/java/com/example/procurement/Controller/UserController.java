@@ -16,14 +16,18 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    public UserController(UserRepository userRepository) {
-    }
-
+    /**
+     * @description Create new User
+     * @memberof UserController
+     */
     @PostMapping(value = "/")
     public UserEntity createUser(@RequestBody UserEntity user){
         return userRepository.save(user);
     }
 
+    /**
+     * @description Login
+     */
     @GetMapping("login/{email}")
     public Optional<UserEntity> findUserDetails(@PathVariable String email){
         return (Optional<UserEntity>) userRepository.findById(email);
