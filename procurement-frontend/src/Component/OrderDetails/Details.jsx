@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Row, Col, Image, Form, CardGroup, Table } from 'react-bootstrap';
+import { Card, Button, Row } from 'react-bootstrap';
 import OrderService from '../../Services/OrderService';
 
 export default class Details extends Component {
