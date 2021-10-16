@@ -60,13 +60,13 @@ export default class Quotation extends Component {
                                 <p>Date Period</p>
                             </div>
                             <div class="table-cell">
-                                <p>Unit Cost</p>
+                                <p>Unit Cost(Rs)</p>
                             </div>
                             <div class="table-cell">
                                 <p>Quantity</p>
                             </div>
                             <div class="table-cell">
-                                <p>Estimated Amount</p>
+                                <p>Estimated Amount(Rs)</p>
                             </div>
                             <div class="table-cell">
                                 <p>Actions</p>
