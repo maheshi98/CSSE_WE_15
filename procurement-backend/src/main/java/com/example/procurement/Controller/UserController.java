@@ -10,16 +10,27 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserRepository userRepository;
 
-    @PostMapping(value = "seniorManager")
+    /**
+     * @description Create new User
+     * @memberof UserController
+     * @param user
+     */
+    @PostMapping(value = "/")
     public UserEntity createUser(@RequestBody UserEntity user){
         return userRepository.save(user);
     }
+
+    /**
+     * @description Login
+     * @param email
+     * @return UserEntity
+     */
     @GetMapping("login/{email}")
     public Optional<UserEntity> findUserDetails(@PathVariable String email){
         return (Optional<UserEntity>) userRepository.findById(email);

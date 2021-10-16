@@ -7,27 +7,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserEntity {
 
     @Id
-    private String id;
-    private String name;
     private String email;
+    private String name;
     private String password;
     private String role;
 
-    public UserEntity(String id, String name, String email, String password, String role) {
-        this.id = id;
+    public UserEntity( String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;

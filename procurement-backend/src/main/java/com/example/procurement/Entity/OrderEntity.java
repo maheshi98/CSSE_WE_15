@@ -19,27 +19,9 @@ public class OrderEntity {
     private String status;
     private Double estimatedCost;
     private String supplierName;
-    private ProjectEntity projectId;
-    @DBRef
-    private List<MaterialsEntity> MaterialList;
-
-    public OrderEntity(String id, String orderId, Date deadLine, Double totalCost, String status, Double estimatedCost, String supplierName) {
-        this.id = id;
-        this.orderId = orderId;
-        this.deadLine = deadLine;
-        this.totalCost = totalCost;
-        this.status = status;
-        this.estimatedCost = estimatedCost;
-        this.supplierName = supplierName;
-    }
-
-    public List<MaterialsEntity> getMaterialList() {
-        return MaterialList;
-    }
-
-    public void setMaterialList(List<MaterialsEntity> materialList) {
-        MaterialList = materialList;
-    }
+    private String approvedBy;
+    private String materials;
+    private Date approveDate = new Date();
 
     public String getId() {
         return id;
@@ -97,11 +79,27 @@ public class OrderEntity {
         this.supplierName = supplierName;
     }
 
-    public ProjectEntity getProjectId() {
-        return projectId;
+    public String getApprovedBy() {
+        return approvedBy;
     }
 
-    public void setProjectId(ProjectEntity projectId) {
-        this.projectId = projectId;
+    public void setApprovedBy(String approvedBy) {
+        this.approvedBy = approvedBy;
+    }
+
+    public Date getApprovedate() {
+        return approveDate;
+    }
+
+    public void setApprovedate(Date approveDate) {
+        this.approveDate = approveDate;
+    }
+
+    public String getMaterials() {
+        return materials;
+    }
+
+    public void setMaterials(String materials) {
+        this.materials = materials;
     }
 }

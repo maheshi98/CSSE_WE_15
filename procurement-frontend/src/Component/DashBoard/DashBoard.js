@@ -1,79 +1,53 @@
-import React , {Component} from "react";
-import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import CancelIcon from '@material-ui/icons/Cancel';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import DonutLargeIcon from '@material-ui/icons/DonutLarge';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Link } from "react-router-dom"
-import Divider from "@material-ui/core/Divider";
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+import { Row, Col, Button } from 'react-bootstrap';
+import { FaStethoscope, FaDog } from 'react-icons/fa';
+import { GiDogHouse, GiDogBowl } from 'react-icons/gi';
+import { BsTable, BsList } from "react-icons/bs";
+import './DashBoard.css';
 
-
-export default function Dashboard(){
+export default class Dashboard extends Component {
+    render() {
         return (
-            <div>
-                <div style={{padding : '0' , margin : '0'}} >
-                    <AppBar position="static">
-                        <Toolbar variant="dense">
-                            <Typography variant="h6" >
-                                Dashboard
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
-                </div>
-                <div className="FirstCard" style={{"margin":'5px'}} >
-                    <Card>
-                        <Link to={'/PendingRequisitions'}>
-                            <Button size="small" style={{height:'100%' , width: '100%'}}>
-                                <CardContent>
-                                    <DonutLargeIcon style={{height:'50px' , width : '50px' }} />
-                                </CardContent>
 
-                                <CardContent>
-                                    <Typography style={{height : "20%" , left : '0' , right : '0' }}>
-                                        Pending Requisitions
-                                    </Typography>
-                                </CardContent>
-                            </Button>
-                        </Link>
-                    </Card>
-
-                </div>
-                <div className="SecondCard" style={{"margin":'5px'}}>
-                    <Card>
-                        <Button size="small" style={{height:'100%' , width: '100%'}}>
-                            <CardContent>
-                                <CheckCircleIcon style={{height:'50px' , width : '50px', top :'0' }} />
-                            </CardContent>
-                            <CardContent>
-                                <Typography style={{height : "20%" , left : '0' , right : '0' }} >
-                                    Approved Requisitions
-                                </Typography>
-                            </CardContent>
-                        </Button>
-                    </Card>
-                </div>
-                <div className="FirstCard" style={{"margin":'5px'}}>
-                    <Card>
-
-                        <Button size="small" style={{height:'100%' , width: '100%'}} >
-                            <CardContent>
-                                <CancelIcon style={{height:'50px' , width : '50px' }} />
-                            </CardContent>
-                            <CardContent>
-                                <Typography style={{height : "20%" , left : '0' , right : '0' }} >
-                                    Order History
-                                </Typography>
-                            </CardContent>
-                        </Button>
-
-                    </Card>
-                </div>
+            <div className="container">
+                <Row style={{ marginBottom: "5%" }}>
+                    <div class="text-center">
+                        <h1 class="head-title">ADMIN DASHBOARD</h1>
+                    </div>
+                    <div class="container-fluid auto-space auto-space-vertical pt-0" style={{ marginLeft: '10rem' }}>
+                        <div class="row">
+                            <div class="four col-sm-6 col-md-3 my-2">
+                                <div class="counter-box colored">
+                                    <i class="fa fa-calendar"><BsList /></i> <span class="counter">20</span>
+                                    <p>Quotations</p>
+                                    <Link to='/submitQuotation'> <Button onClick={this.shoot} variant="dark" type="submit">
+                                        View
+                                    </Button> {''}</Link>
+                                </div>
+                            </div><br />
+                            <div class="four col-sm-6 col-md-3 my-2">
+                                <div class="counter-box colored">
+                                    <i class="fa fa-group"><BsTable /></i> <span class="counter">30</span>
+                                    <p>Pending Order List</p>
+                                    <Link to='/orderInfo'> <Button onClick={this.shoot} variant="dark" type="submit">
+                                        View
+                                    </Button> {''}</Link>
+                                </div>
+                            </div><br />
+                            <div class="four col-sm-6 col-md-3 my-2">
+                                <div class="counter-box colored">
+                                    <i class="fa fa-github"><BsList /></i> <span class="counter">40</span>
+                                    <p>Approved Order List</p>
+                                    <Link to='/approvedOrder'> <Button onClick={this.shoot} variant="dark" type="submit">
+                                        View
+                                    </Button> {''}</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Row>
             </div>
-         );
-
+        );
+    }
 }
