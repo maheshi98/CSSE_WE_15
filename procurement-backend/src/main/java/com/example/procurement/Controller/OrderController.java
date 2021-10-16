@@ -26,6 +26,8 @@ public class OrderController {
     /**
      * @description Create new Order
      * @memberof OrderController
+     * @param order
+     * @return OrderEntity
      */
     @PostMapping("/create")
     public ResponseEntity<OrderEntity> createOrder(@RequestBody OrderEntity order) {
@@ -40,6 +42,7 @@ public class OrderController {
     /**
      * @description This method retrieve all Orders
      * @memberof OrderController
+     * @return List<OrderEntity>
      */
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
     public List<OrderEntity> GetAllOrders(){

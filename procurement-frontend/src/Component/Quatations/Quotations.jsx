@@ -81,7 +81,7 @@ export default class Quotation extends Component {
                                         <p>{quotation.quotationId}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{'Saman Perea'}</p>
+                                        <p>{quotation.supplierName}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{quotation.dateFrom.split('T')[0]} - {quotation.dateTo.split('T')[0]}</p>
