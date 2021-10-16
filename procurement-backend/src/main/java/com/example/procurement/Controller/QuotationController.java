@@ -26,6 +26,7 @@ public class QuotationController {
     /**
      * @description Create new Quotation
      * @memberof QuotationController
+     * @param quotation
      */
     @PostMapping("/create")
     public ResponseEntity<QuotationEntity> createQuotation(@RequestBody QuotationEntity quotation) {
@@ -36,7 +37,9 @@ public class QuotationController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+/**
+ * @
+ * */
     /**
      * @description This method retrieve all Quotations
      * @memberof QuotationController
@@ -51,6 +54,7 @@ public class QuotationController {
      * @memberof QuotationController
      */
     @GetMapping("getById/{id}")
+
     public Optional<QuotationEntity> findQuotationById(@PathVariable String id){
         return quotationRepository.findById(id);
     }

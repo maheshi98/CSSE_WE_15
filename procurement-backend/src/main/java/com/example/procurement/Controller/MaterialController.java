@@ -21,6 +21,7 @@ public class MaterialController {
     /**
      * @description Create new Material
      * @memberof MaterialController
+     * @param materialsEntity
      */
     @PostMapping("/create")
     public ResponseEntity<MaterialsEntity> createMaterials(@RequestBody MaterialsEntity materialsEntity) {
@@ -31,9 +32,13 @@ public class MaterialController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    /**
+     * @description get Material
+     * @memberof MaterialController
+     * @return List<MaterialsEntity>
+     */
     @GetMapping(value = "/")
-    public List<MaterialsEntity> getAllOrder(){
+    public List<MaterialsEntity> getAllMaterials(){
         return  materialsRepository.findAll();
     }
 

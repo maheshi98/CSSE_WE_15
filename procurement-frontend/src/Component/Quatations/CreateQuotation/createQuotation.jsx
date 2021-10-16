@@ -105,7 +105,7 @@ export default class Createquotation extends Component {
                                     <Form.Label>Quotation ID</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        id="confTopic"
+                                        id="quotationId"
                                         name="quotationId"
                                         placeholder="ID"
                                         value={this.state.quotationId}
@@ -116,7 +116,7 @@ export default class Createquotation extends Component {
                                     <Form.Label>Estimated Amount</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        id="confTopic"
+                                        id="estimatedAmount"
                                         name="estimatedAmount"
                                         placeholder="Amount"
                                         value={this.state.estimatedAmount}
