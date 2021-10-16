@@ -30,7 +30,7 @@ export default class App extends Component {
                         <Route exact path='/orderDetails/:id' component={Details} />
                         <Route exact path='/approvedOrder' component={ApprovedOrder} />
                         <Route exact path='/submitQuotation' component={Quotation} />
-                        <Route exact path='/viewQuotation/:id' component={ViewQuotation} />
+                        <Route exact path='/viewQuotation/:id/:orderId' component={ViewQuotation} />
                         <Route exact path='/createQuotation/:id' component={Createquotation} />
 
                     </Switch>

@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface InvoiceRepository extends MongoRepository<InvoiceEntity, String> {
 
-    List<InvoiceEntity> findByOrderId(OrderEntity orderId);
+    List<InvoiceEntity> findByOrderId(String orderId);
 
 }

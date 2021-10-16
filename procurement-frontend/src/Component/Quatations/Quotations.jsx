@@ -32,9 +32,9 @@ export default class Quotation extends Component {
             });
     }
 
-    navigateViewPage(e, orderId) {
+    navigateViewPage(e, orderId, quotationId) {
         console.log("Pet ID:", orderId);
-        window.location = `/viewQuotation/${orderId}`
+        window.location = `/viewQuotation/${orderId}/${quotationId}`
     }
     render() {
         return (
@@ -84,7 +84,7 @@ export default class Quotation extends Component {
                                         <p>{quotation.supplierName}</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{quotation.dateFrom.split('T')[0]} - {quotation.dateTo.split('T')[0]}</p>
+                                        <p>{quotation.dateFrom} - {quotation.dateTo}</p>
                                     </div>
                                     <div class="table-cell ">
                                         <p>{quotation.unitCost}</p>
@@ -100,7 +100,7 @@ export default class Quotation extends Component {
                                     </div>
                                     <div class="table-cell last-cell">
                                         <div style={{ marginLeft: '-7rem' }}>
-                                            <Button onClick={e => this.navigateViewPage(e, quotation.id)} variant="dark" type="submit" size="sm">
+                                            <Button onClick={e => this.navigateViewPage(e, quotation.id , quotation.orderId.id)} variant="dark" type="submit" size="sm">
                                                 View Quotation
                                             </Button>
                                         </div>
