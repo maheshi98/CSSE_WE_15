@@ -102,7 +102,7 @@ export default class Details extends Component {
                                 <p>Order Id: {this.state.orderId}</p>
                                 <p>Created By: Mr.Harsha Karunarathna</p>
                                 <p>Date: {this.state.deadLine.split('T')[0]}</p>
-                                <p>Calculated Cost: {this.state.totalCost}</p>
+                                <p>Calculated Cost (Rs): {this.state.totalCost}</p>
                                 <p>Status: {this.state.status}</p></div>
                         </Card.Body>
                         <Card.Body>
