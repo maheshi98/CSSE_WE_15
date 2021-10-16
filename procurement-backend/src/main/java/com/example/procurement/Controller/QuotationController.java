@@ -26,6 +26,7 @@ public class QuotationController {
     /**
      * @description Create new Quotation
      * @memberof QuotationController
+     * @param quotation
      */
     @PostMapping("/create")
     public ResponseEntity<QuotationEntity> createQuotation(@RequestBody QuotationEntity quotation) {

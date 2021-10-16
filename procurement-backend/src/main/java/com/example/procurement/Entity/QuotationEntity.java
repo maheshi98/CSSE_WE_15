@@ -14,6 +14,7 @@ public class QuotationEntity {
     private Date dateTo;
     private Double unitCost;
     private int quantity;
+    private String materials;
     private OrderEntity orderId;
 
     public QuotationEntity(String id, String quotationId, double estimatedAmount, Date dateFrom, Date dateTo, Double unitCost, int quantity) {
@@ -88,5 +89,13 @@ public class QuotationEntity {
 
     public void setOrderId(OrderEntity orderId) {
         this.orderId = orderId;
+    }
+
+    public String getMaterials() {
+        return materials;
+    }
+
+    public void setMaterials(String materials) {
+        this.materials = materials;
     }
 }

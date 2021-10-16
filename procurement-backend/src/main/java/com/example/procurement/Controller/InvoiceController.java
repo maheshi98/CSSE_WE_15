@@ -21,18 +21,21 @@ public class InvoiceController {
     /**
      * @description This method retrieve all Orders
      * @memberof
+     * @return InvoiceEntity
      */
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
-    public List<InvoiceEntity> GetAllOrders(){
-        return invoiceRepository.findAll();
+    public List<InvoiceEntity> getInvoiceByOrder(OrderEntity orderId){
+        return invoiceRepository.findByOrderId(orderId);
     }
 
     /**
      * @description Create new Invoice
      * @memberof InvoiceController
+     * @param invoice
+     * @return InvoiceEntity
      */
     @PostMapping("/create")
-    public ResponseEntity<InvoiceEntity> createOrder(@RequestBody InvoiceEntity invoice) {
+    public ResponseEntity<InvoiceEntity> craeteInvoice(@RequestBody InvoiceEntity invoice) {
         try{
             invoiceRepository.save(invoice);
             return ResponseEntity.status(HttpStatus.CREATED).build();

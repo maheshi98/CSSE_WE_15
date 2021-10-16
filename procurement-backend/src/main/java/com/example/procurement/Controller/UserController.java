@@ -19,6 +19,7 @@ public class UserController {
     /**
      * @description Create new User
      * @memberof UserController
+     * @param user
      */
     @PostMapping(value = "/")
     public UserEntity createUser(@RequestBody UserEntity user){
@@ -27,6 +28,8 @@ public class UserController {
 
     /**
      * @description Login
+     * @param email
+     * @return UserEntity
      */
     @GetMapping("login/{email}")
     public Optional<UserEntity> findUserDetails(@PathVariable String email){
