@@ -13,5 +13,9 @@ class QuotationService {
         return axios.post('http://localhost:8080/quotation/create', quotation);
 
     }
+
+    getInvoiceByOrder(orderId){
+        return axios.get('http://localhost:8080/invoice/getall/' + orderId);
+    }
 }
 export default new QuotationService();

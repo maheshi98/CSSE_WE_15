@@ -23,8 +23,8 @@ public class InvoiceController {
      * @memberof
      * @return InvoiceEntity
      */
-    @RequestMapping(value = "/getall", method = RequestMethod.GET)
-    public List<InvoiceEntity> getInvoiceByOrder(OrderEntity orderId){
+    @RequestMapping(value = "/getall/{orderId}", method = RequestMethod.GET)
+    public List<InvoiceEntity> getInvoiceByOrder(@PathVariable  String orderId){
         return invoiceRepository.findByOrderId(orderId);
     }
 
