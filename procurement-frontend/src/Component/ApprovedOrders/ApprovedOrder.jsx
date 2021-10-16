@@ -8,7 +8,7 @@ import './ApprovedOrder.css';
 export default class ApprovedOrder extends Component {
     constructor(props) {
         super(props);
-        this.retrieveApproveOrderList = this.retrieveApproveOrderList.bind(this); 
+        this.retrieveApproveOrderList = this.retrieveApproveOrderList.bind(this);
 
         this.state = {
             ApproveOrderDetails: []
@@ -74,7 +74,7 @@ export default class ApprovedOrder extends Component {
                             approveOrder =>
                                 <div class="table-row" key={approveOrder.id}>
                                     <div class="table-cell first-cell">
-                                    <p>{approveOrder.orderId}</p>
+                                        <p>{approveOrder.orderId}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{approveOrder.approvedBy}</p>
@@ -92,13 +92,13 @@ export default class ApprovedOrder extends Component {
                                         <p>{approveOrder.status}</p>
                                     </div>
                                     <div class="table-cell last-cell">
-                                   <Button onClick={e => this.navigateViewPage(e, approveOrder.id)}  Button variant="dark" type="submit">
-                                                View & Create Quotation
-                                            </Button> 
-        
+                                        <Button onClick={e => this.navigateViewPage(e, approveOrder.id)} Button variant="dark" type="submit">
+                                            View & Create Quotation
+                                        </Button>
+
                                     </div>
                                 </div>
-                                )}
+                        )}
                         {/* Table Data Row End */}
                     </div>
                 </Row>

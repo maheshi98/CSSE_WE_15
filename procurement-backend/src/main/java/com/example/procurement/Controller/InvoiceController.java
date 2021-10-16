@@ -18,11 +18,19 @@ public class InvoiceController {
     @Autowired
     private InvoiceRepository invoiceRepository;
 
+    /**
+     * @description This method retrieve all Orders
+     * @memberof
+     */
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
     public List<InvoiceEntity> GetAllOrders(){
         return invoiceRepository.findAll();
     }
 
+    /**
+     * @description Create new Invoice
+     * @memberof InvoiceController
+     */
     @PostMapping("/create")
     public ResponseEntity<InvoiceEntity> createOrder(@RequestBody InvoiceEntity invoice) {
         try{

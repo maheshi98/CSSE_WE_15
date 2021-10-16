@@ -61,11 +61,6 @@ export default class Footer extends Component {
                             <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                                 <div class="footer-menu">
                                     <ul>
-                                        {/* <li><a href="/">Home</a></li>
-                                        <li><a href="/keynotes">Pet Accessory</a></li>
-                                        <li><a href="/conference">Pet Details</a></li>
-                                        <li><a href="/past-proceedings">Veternary</a></li>
-                                        <li><a href="/contact">Contact Us</a></li> */}
                                     </ul>
                                 </div>
                             </div>

@@ -23,6 +23,10 @@ public class QuotationController {
     @Autowired
     private QuotationService quotationService;
 
+    /**
+     * @description Create new Quotation
+     * @memberof QuotationController
+     */
     @PostMapping("/create")
     public ResponseEntity<QuotationEntity> createQuotation(@RequestBody QuotationEntity quotation) {
         try{
@@ -33,13 +37,21 @@ public class QuotationController {
         }
     }
 
+    /**
+     * @description This method retrieve all Quotations
+     * @memberof QuotationController
+     */
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
     public List<QuotationEntity> GetAllQuotation(){
         return quotationService.getAllQuotation();
     }
 
+    /**
+     * @description This method retrieve quotation details by QuotationID
+     * @memberof QuotationController
+     */
     @GetMapping("getById/{id}")
-    public Optional<QuotationEntity> findPetById(@PathVariable String id){
+    public Optional<QuotationEntity> findQuotationById(@PathVariable String id){
         return quotationRepository.findById(id);
     }
 }

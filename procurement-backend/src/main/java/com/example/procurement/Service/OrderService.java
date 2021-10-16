@@ -14,11 +14,11 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<OrderEntity> getAllPets(){
+    public List<OrderEntity> getAllOrders(){
         return orderRepository.findAll();
     }
 
-    public List<OrderEntity> getConferenceByStatus(String status){
+    public List<OrderEntity> getOrderByStatus(String status){
         return orderRepository.findByStatus(status);
     }
 
