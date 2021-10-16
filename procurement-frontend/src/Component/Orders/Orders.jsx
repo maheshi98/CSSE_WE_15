@@ -82,7 +82,7 @@ export default class OrderTable extends Component {
                                         <p>Mr.Harsha Karunarathna</p>
                                     </div>
                                     <div class="table-cell">
-                                        <p>{order.deadLine.split('T')[0]}</p>
+                                        <p>{order.deadLine}</p>
                                     </div>
                                     <div class="table-cell">
                                         <p>{order.totalCost}</p>
